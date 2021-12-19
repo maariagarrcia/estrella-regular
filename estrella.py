@@ -25,8 +25,13 @@ def dibujar_estrella(puntas,x,y):
     if puntas <= 4:
         print("La estrella tiene que tener 4 puntas minimo. Inserte una mayor")
         return 
-    
 
+    for a in range(puntas // 2, 1, -1):
+        # Bucle para buscar el a ngulo de rotacion
+        if mcd(puntas, a) == 1:
+            angle = 360.0 / puntas * a
+            break
+    
 
 
 
