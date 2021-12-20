@@ -1,16 +1,21 @@
+# Este programa dibuja poligonos estrellados según la definición de estos que
+# figura en la wikipedia y no estrellas.
+# Los poligonos trellados se pueden dibujar de un solo trazo sin levantar el
+# el lapiz. Esto significa que con un solo trazo se pueden visitar todos los
+# vértices del poligono reglar sin dejar ninguno sin visitar.
+
 ####
 # F U N C I O N E S
 ####
 
-def dibujar_estrella(puntas,lado=150):
 
-    ####
-    # I M P O R T S
-    ####
+####
+# I M P O R T S
+####
 
-    # Import turtle: se usa para crear dibujos sencillos, en una
-    # ventana distinta a la ventana de IDLE.
-    import turtle 
+# Import turtle: se usa para crear dibujos sencillos, en una
+# ventana distinta a la ventana de IDLE.
+import turtle 
     turtle.pencolor("pink")
     turtle.shape("triangle")
     turtle.fillcolor("yellow")
@@ -26,32 +31,24 @@ def dibujar_estrella(puntas,lado=150):
             x, y = y, x % y
         return x
    
-    # Miinimo  una estrella tiene que tener 4 puntas
-    if puntas <= 4:
-        print("La estrella tiene que tener 4 puntas minimo. Inserte una mayor")
-        return 
+    
+    def calcular_angulo(puntas):
+        # Bucle el angulo de rotacion
+        for a in range(puntas// 2, 1, -1):
+            if mcd(puntas, a) == 1:
+                return 360.0 / puntas * a
 
-    for a in range(puntas // 2, 1, -1):
-        # Bucle para buscar el angulo de rotacion
-        if mcd(puntas, a) == 1:
-            angle = 360.0 / puntas * a
-            break
+        return  # Esto devuele nulo ya que no se especifica un      valor a devolver
 
-    # Dibujar los trazos
-    for _ in range(puntas):
-        # Dibujamos el lado
-        turtle.forward(lado)
-        # Rotamos el cursor
-        turtle.left(angle)
-    turtle.end_fill()
-    return
+    def dibujar_poligono_estrellado():
+       
 
 ####
 # I N I C I O   P R O G R A M A
 ####
 
 # Devolvemos la funcion con el parametro a elegir
-dibujar_estrella(10)
+dibujar_poligono_estrellado(5)
 
 
 
