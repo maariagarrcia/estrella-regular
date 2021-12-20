@@ -4,9 +4,7 @@
 # el lapiz. Esto significa que con un solo trazo se pueden visitar todos los
 # vértices del poligono reglar sin dejar ninguno sin visitar.
 
-####
-# F U N C I O N E S
-####
+
 
 
 ####
@@ -17,6 +15,9 @@
 # ventana distinta a la ventana de IDLE.
 import turtle 
    
+####
+# F U N C I O N E S
+####
 
 def mcd(x,y):
     # Funcion para calcular el maximo comun divisor de dos 
