@@ -5,8 +5,6 @@
 # vértices del poligono reglar sin dejar ninguno sin visitar.
 
 
-
-
 ####
 # I M P O R T S
 ####
@@ -22,7 +20,7 @@ import turtle
 def mcd(x,y):
     # Funcion para calcular el maximo comun divisor de dos 
     # numeros enteros por el algoritmo de euclides. 
-    # Funciun necesaria para calcular el angulo de rotacion 
+    # Funcion necesaria para calcular el angulo de rotacion 
     while (y != 0):
         x, y = y, x % y
     return x
@@ -34,11 +32,11 @@ def calcular_angulo(puntas):
         if mcd(puntas, a) == 1:
             return 360.0 / puntas * a
 
-    return  # Esto devuele nulo ya que no se especifica un      valor a devolver
+    return  # Esto devuele nulo ya que no se especifica un valor a devolver
 
 def dibujar_poligono_estrellado(puntas, lado=150):
     # Dibujar una poligono estrellado regular (con todos los angulo iguales)
-    # # dado el numero de puntas de dicho polígno
+    # dado el numero de puntas de dicho polígno
 
     # Bucle para buscar el angulo de rotacion
     angle = calcular_angulo(puntas)
